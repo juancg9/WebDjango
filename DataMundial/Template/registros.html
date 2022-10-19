@@ -1,0 +1,92 @@
+{% extends "inicio.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{%static 'css/bootstrap.min.css'%}">
+    <title>Registro</title>
+</head>
+<body>
+  {% block contenido %}
+  
+  <div class="position-relative overflow-hidden p-3 p-md-5 m-md-30 text-center bg-light">
+    <div class="col-md-50 p-lg-50 mx-auto my-5">
+      <h1 class="display-4 fw-normal">BIENVENIDO A LA ZONA DE REGISTRO </h1>
+      <p class="lead fw-normal">Por favor ingresa tus datos para el registro y poder acceder a las otras funcionalidades de la página</p>
+      <p class="lead fw-normal">Si ya eres un usuario registrado puedes buscar tus datos tus datos ingresando tu correo</p>         
+    </div>
+    <div class="product-device shadow-sm d-none d-md-block"></div>
+    <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
+  </div>
+
+   <!-- zona de registro de personas -->
+        <div class="contenidoRegistro" align="center">  <!-- class da formato y se pueden repetir en el codigo -->
+            <p> &nbsp; </p> <!-- este comando da un espacio vertical entre elementos -->
+            <b>REGISTRATE ACA</b>
+            <p> &nbsp; </p>
+            <form class="formDataRegistro" action="/DataMundial/registros/" method="POST"> {% csrf_token %}   <!-- envio info a la DB cuando se presiona el boton -->               
+                <input type="text" name="nombre" placeholder="nombre" required/>    <!-- placeholder es un mensaje fantasma -->
+                <input type="text" name="apellido" placeholder="apellido" required/> 
+                <input type="email" name="email" placeholder="email" required/>  
+                <input type="edad" name="edad" placeholder="edad" required/>  
+                <button type="submit" class="btn btn-success">Registrar</button> <!-- con submit toma los valores del formlario (nombre, apellido, email) y los  envia a la DB -->  
+                
+            </form>
+        </div>         
+    <!--  -->
+
+ <!-- zona de busqueda de personas -->
+    <p> &nbsp; </p>
+    <div class="alert alert-dark role="alert" align="center">  <!-- class da formato y se pueden repetir en el codigo -->
+        <p> &nbsp; </p> <!-- este comando da un espacio vertical entre elementos -->
+        <b>BUSCA TU INFORMACION ACA</b>
+        <p> &nbsp; </p>
+        <form class="formDataRegistro" action="/DataMundial/buscar_registro/" method="GET">   <!-- trae info a la DB cuando se presiona el boton -->               
+            <input type="email" name="email" placeholder="email" required/>                        
+            <button type="submit" class="btn btn-warning">Buscar</button> <!-- con submit toma los valores del formlario (nombre, apellido, email) y los  envia a la DB -->  
+
+
+        </form>
+       
+<!--  ESTE CODIGO COMPARA SI LA VARIABLE REGISTROS QUE VIENE DE LA CLASE buscar_registro en "views.py"
+      TRAE INFORMACION Y LA SEPARA DEBIDO A QUE ES UNA LISTA                                            -->
+    
+        {% if registros %}
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">BIENVENIDO DE NUEVO</h5>
+              <p class="card-text">
+                <ul>
+                    YA ESTAS REGISTRADO Y TUS DATOS SON:
+                    <br>          
+                    {% for registro in registros %}
+                        NOMBRE:               
+                        {{registro.nombre}}
+                        <br>  
+                        APELLIDO:
+                        {{registro.apellido}}
+                        <br>  
+                        EMAIL: 
+                        {{registro.email}}
+                        <br>  
+                        EDAD: 
+                        {{registro.edad}}                
+                  {% endfor %}
+                </ul>
+              </p>
+              <a href="/DataMundial/registros/" class="btn btn-primary">Volver</a>
+            </div>
+        </div>   
+                
+        {% endif %} 
+
+        
+    </div>  
+ <!--   ################# FIN DEL CODIGO DE BUSQUEDA Y VISUALIZACION  ###################### -->
+     
+  {% endblock%}
+</body>
+</html>

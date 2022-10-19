@@ -1,0 +1,24 @@
+{% extends "inicio.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+</head>
+<body>
+{% block contenido %}
+    <div class="container-fluid" style="background-color: white;">
+        <form style="position: absolute; top: 200px" action="" method="POST">
+            {%csrf_token%}
+            {{form.as_p}}
+            
+
+            <button type="submit" style="background-color: white;">Registrate</button>
+
+        </formm>
+    </div>
+{% endblock %}
+</body>
+</html>

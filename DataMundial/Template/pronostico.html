@@ -1,0 +1,103 @@
+{% extends "inicio.html" %}
+
+
+{% load static %}
+<link rel="stylesheet" href="{%static 'css/bootstrap.min.css'%}">
+{% block contenido %}
+
+<br>
+<br><br>
+<center><h1>COMENTARIOS DE NUESTROS SUSCRIPTORES</h1></center>
+
+<table style="margin: 0 auto;" width="900" cellspacing="1" cellpadding="10" border="0" bgcolor="#F7EDF0" >
+    <thead>
+        <tr>
+            <th>
+                Comentario
+            </th>
+            <Th>
+                Pais Campeón
+            </Th>
+            <Th>
+                Bandera del Pais
+            </Th>
+            <Th>
+                Usuario
+            </Th>
+            <Th>
+                Fecha
+            </Th>
+            
+        </tr>
+    </thead>
+    {% for instance in data %}
+        <tr>
+            <td>
+                {{ instance.fields.comentario }} <hr>
+            </td>
+            <td align="center" valign="top">
+                {{ instance.fields.pais }}                
+                {% if instance.fields.pais == 'Brasil' %}                   
+                    
+                    <td valign="top">
+                        <image src="https://www.worldometers.info/img/flags/small/tn_br-flag.gif" width="65" height="40" >
+                    </td>
+                {% elif instance.fields.pais == 'Alemania' %}                   
+                    <td valign="top">
+                        <image src="https://www.worldometers.info/img/flags/small/tn_gm-flag.gif" width="65" height="40" >
+                    </td>
+                    {% elif instance.fields.pais == 'Canada' %}                   
+                    <td valign="top">
+                        <image src="https://www.worldometers.info/img/flags/small/tn_ca-flag.gif" width="65" height="40" >
+                    </td>
+                    {% elif instance.fields.pais == 'Peru' %}                   
+                    <td valign="top">
+                        <image src="https://www.worldometers.info/img/flags/small/tn_pe-flag.gif" width="65" height="40" >
+                    </td>
+                    {% elif instance.fields.pais == 'España' %}                   
+                    <td valign="top">
+                        <image src="https://www.worldometers.info/img/flags/sp-flag.gif" width="65" height="40" >
+                    </td>
+                    {% elif instance.fields.pais == 'Francia' %}                   
+                    <td valign="top">
+                        <image src="https://www.worldometers.info/img/flags/fr-flag.gif" width="65" height="40" >
+                    </td>
+                    {% elif instance.fields.pais == 'Argentina' %}                   
+                    <td valign="top">
+                        <image src="https://www.worldometers.info/img/flags/ar-flag.gif" width="65" height="40" >
+                    </td>
+                    {% elif instance.fields.pais == 'Ecuador' %}                   
+                    <td valign="top">
+                        <image src="https://www.worldometers.info/img/flags/small/tn_ec-flag.gif" width="65" height="40" >
+                    </td>
+                    {% elif instance.fields.pais == 'Inglaterra' %}                   
+                    <td valign="top">
+                        <image src="https://upload.wikimedia.org/wikipedia/en/thumb/b/be/Flag_of_England.svg/255px-Flag_of_England.svg.png" width="65" height="40" >
+                    </td>
+                    {% elif instance.fields.pais == 'Belgica' %}                   
+                    <td valign="top">
+                        <image src="https://www.worldometers.info/img/flags/small/tn_be-flag.gif" width="65" height="40" >
+                    </td>
+                    {% elif instance.fields.pais == 'Holanda' %}                   
+                    <td valign="top">
+                        <image src="https://www.worldometers.info/img/flags/small/tn_nl-flag.gif" width="65" height="40" >
+                    </td>
+                {% endif %}
+            </td>
+            <td align="center" valign="top">                
+                {{ instance.fields.user }}
+            </td>
+            
+            <td align="center" valign="top">
+                {{ instance.fields.fecha }} <hr>
+            </td>
+        </tr>  
+    {% endfor %}
+</table>
+
+<section>
+    
+</section>
+
+    
+{% endblock %}

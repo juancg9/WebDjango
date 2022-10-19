@@ -1,0 +1,17 @@
+{% extends "inicio.html" %}
+{% load static %}
+<link rel="stylesheet" href="{%static 'css/bootstrap.min.css'%}">
+{% block contenido%}
+<h1>Editar Perfil</h1>
+<h1>{{ usuario }}</h1>
+
+<form method="POST"> {% csrf_token %}
+    <table>
+        {{ form.as_table}}
+    </table>
+    <input type="submit" value="Editar Perfil">
+</form>
+<a class="btn btn-succes" style="background-color: ghostwhite;" href="/DataMundial/perfil/changepass">Cambiar Contraseña</a>
+
+<a class="btn btn-succes" style="background-color: ghostwhite;" href="/DataMundial/perfil/changeAvatar">Cambiar imagen de perfil</a>
+{% endblock %}

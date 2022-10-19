@@ -1,0 +1,37 @@
+{% extends "inicio.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+{% block contenido %}
+<form method = "POST" class="row g-3 needs-validation" style="position: absolute; top: 200px; left: 800px;" novalidate>
+    {%csrf_token%}
+    <div class="d-grid gap-2 col-6 mx-auto">
+      <label for="validationCustom01" class="form-label">User name</label>
+      {{form.username}}
+      <div class="valid-feedback">
+        Looks good!
+      </div>
+      <div class="col-md-4">
+        <label for="validationCustom01" class="form-label">Contraseña</label>
+        {{form.password}}
+        <div class="valid-feedback">
+          Looks good!
+        </div>
+        <div class="d-grid gap-2 col-6 mx-auto">
+            <button class="btn btn-warning" style="position:relative ; left:50px; top: 10px" type="submit">Iniciar Sesion</button>
+        </div>
+        
+    </div>
+    
+  </form>
+    
+
+{% endblock %}   
+</body>
+</html>

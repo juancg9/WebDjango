@@ -1,0 +1,58 @@
+{% extends "inicio.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Concurso</title>
+</head>
+<body>
+{% block contenido %}
+<main>   
+	<section>
+		<br>
+		<table style="margin: 0 auto;" width="1480" cellspacing="1" cellpadding="30" border="0" bgcolor="#1E679A">
+			<tr>
+				<td><font color="#FFFFFF" face="arial, verdana, helvetica">
+			
+				</font></td>
+			</tr>
+			<tr>
+				<td bgcolor="#ffffcc" style="text-align:center;">
+				<font face="arial, verdana, helvetica">
+					<b>BIENVENIDO!!!</b><br>
+					<b>PARA PARTICIPAR DEBES ESCOGER EL PAIS QUE CONSIDERAS VA A GANAR LA COPA.</b><br>
+					<b>TAMBIEN ES NECESARIO ESCRIBIR UN CORTO COMENTARIO SOBRE PORQUE ELEGISTE ESE PAIS.</b>
+				</font>
+				</td>
+			</tr>
+			</table>
+		<br>
+	</section>  
+	<section>
+		<div class="container">
+			<form method="POST">
+			<fieldset>
+				<!-- <legend>Form</legend> -->
+				{% csrf_token %}
+				{{ form.as_p }}
+				
+				
+				<button type="submit" class="btn btn-primary">Enviar</button>
+				
+			</fieldset>
+			</form>
+
+			
+
+		</div>		
+	</section>
+	
+	<section>
+		
+	</section>
+</main>
+{%endblock%}
+</body>
+</html>

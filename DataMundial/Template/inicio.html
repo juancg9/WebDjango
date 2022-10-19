@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{%static 'css/bootstrap.min.css'%}">
+    <title>Inicio Qatar 2022</title>
+</head>
+<body style="background-color:#0c5692d8;">
+    <header class="site-header sticky-top py-1">
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/DataMundial/inicio">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/DataMundial/concurso">Concurso</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/DataMundial/selecciones">Selecciones</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/DataMundial/ranking">Pronostico</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/DataMundial/grupos">Grupos</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="/DataMundial/miSeleccion">Arma tu seleccion</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="/DataMundial/acercade">Acerca de los desarrolladores</a>
+                    </li>
+                  {% if user.id is not none%}
+                      <li class="nav-item" style="position: absolute; right: 350px; top: 16px;">
+                        <img src="{{ avatar }}" width="40px">
+                      </li> 
+                      <li class="nav-item" style="position: absolute; right: 250px; top: 16px;">
+                        <a class="alert alert-warning">{{ user.username }}</a>
+                      </li>                 
+                      <li class="nav-item" style="position: absolute; right: 90px">
+                        <a class="btn btn-outline-secondary" href="/DataMundial/perfil/editarPerfil">Editar Perfil</a>
+                      </li>                           
+                      <li class="nav-item" style="position: absolute; right: 10px">
+                        <a class="btn btn-outline-secondary" href="/DataMundial/logout">Salir</a>
+                    {% else %}
+                      <li class="nav-item" style="position: absolute; right: 180px">
+                        <a class="btn btn-outline-secondary" href="/DataMundial/login">Iniciar Sesión</a>
+                      </li>
+
+                      <li class="nav-item" style="position: absolute; right: 20px">
+                        <a class="btn btn-outline-secondary" href="/DataMundial/registro">Registrarse</a>
+                      </li>
+                  {% endif %}
+                    </li>                
+                  
+                </ul>
+            </div>
+            
+        </div>
+    </header>
+    
+    <main>
+      {% block contenido %}
+      
+      <!-- ESTA PRIMERA DIVISION CORRESPONDE AL TEXTO DE BIENVENIDA-->
+        <div class="position-relative overflow-hidden p-3 p-md-5 m-md-30 text-center bg-light">
+          <div class="col-md-50 p-lg-50 mx-auto my-5">
+            <h1 class="display-4 fw-normal">BIENVENIDO A LA PAGINA DE LA SUERTE MUNDIALISTA </h1>
+            <p class="lead fw-normal">Acá podrás participar adivinando ganadores y campeón del mundial Qatar 2022!</p>
+            <p class="lead fw-normal">También podrás mirar estadísticas y pronósticos.</p>
+            <!--   <a class="btn btn-outline-secondary" href="#">Coming soon</a> -->
+          </div>
+          <div class="product-device shadow-sm d-none d-md-block"></div>
+          <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
+          <a>
+            <!-- <image src="https://www.futbolred.com/files/article_main/uploads/2022/03/31/6245e1b8b799b.jpeg"
+              width="300" height="150"
+              alt="texto alternativo de la imagen" /> -->
+          </a>
+        </div>
+      
+        <!-- EN ESTA SEGUNDA DIVISION SE AGREGAN LAS 4 SECCIONES A MOSTRAR CON SUS BOTONES -->
+        <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
+          <div class="text-bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+            <div class="my-3 py-3">
+              <h2 class="display-5">GRUPOS</h2>
+              <p class="lead">Ver fase de grupos</p>
+              <a class="btn btn-outline-secondary" href="/DataMundial/grupos">GRUPOS</a>  <!-- ESTE COMANDO ES PARA AGREGAR EL BOTON-->
+            </div>
+            <div class="bg-light shadow-sm mx-auto" style="width: 90%; height: 210px; border-radius: 21px 21px 0 0;">
+              <image src="https://www2.deloitte.com/content/dam/Deloitte/co/Images/promo_images/servicios/consumo%20masivo/ball.jpg/_jcr_content/renditions/cq5dam.web.231.231.desktop.jpeg"
+              width="150" height="150" vspace="30"></image>
+            </div>
+            
+          </div>
+          <div class="bg-light me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+            <div class="my-3 p-3">
+              <h2 class="display-5">CONCURSO</h2>
+              <p class="lead">Elige tus ganadores y posible campeón.</p>
+              <a class="btn btn-outline-secondary" href="/DataMundial/concurso">PARTICIPA</a>  <!-- ESTE COMANDO ES PARA AGREGAR EL BOTON-->
+            </div>
+            <div class="bg-dark shadow-sm mx-auto" style="width: 80%; height: 210px; border-radius: 21px 21px 0 0;">
+              <image src="https://upload.wikimedia.org/wikipedia/en/thumb/a/a5/Fifa_world_cup_org.png/346px-Fifa_world_cup_org.png?20060610202820"
+              width="130" height="190" vspace="12"></image>
+            </div>  
+          </div>
+          <div class="bg-light me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+              <div class="my-3 p-3">
+                <h2 class="display-5">SELECCIONES</h2>
+                <p class="lead">Conoce y analiza las selecciones del mundial.</p>
+                <a class="btn btn-outline-secondary" href="/DataMundial/selecciones">SELECCIONES</a>  <!-- ESTE COMANDO ES PARA AGREGAR EL BOTON-->
+              </div>
+                  <div class="bg-dark shadow-sm mx-auto" style="width: 80%; height: 210px; border-radius: 21px 21px 0 0;">
+                      <image src="https://www.futbolred.com/files/article_main/uploads/2022/03/31/6245e1b8b799b.jpeg"
+                      width="250" height="140" vspace="35"></image>                
+              </div>
+          </div>
+          <div class="text-bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden"">
+              <div class="my-3 py-3">
+                <h2 class="display-5">PRONOSTICOS</h2>
+                <p class="lead">Mira las tendencias de los resultados.</p>
+                <a class="btn btn-outline-secondary" href="/DataMundial/ranking">PRONOSTICOS</a>  <!-- ESTE COMANDO ES PARA AGREGAR EL BOTON-->
+              </div>
+              <div class="bg-light shadow-sm mx-auto" style="width: 80%; height: 210px; border-radius: 21px 21px 0 0;">
+                  <image src="http://4.bp.blogspot.com/-PJ66QZ2ta0Q/VgjQws1RK-I/AAAAAAAAD7A/rd-LXUFdo_w/s1600/tendencia.jpg"
+                      width="200" height="140" vspace="30"></image> 
+              </div>
+          </div>
+        </div>
+      {% endblock %}
+       
+        
+     
+    </main>
+</body>
+</html>

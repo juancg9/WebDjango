@@ -1,0 +1,275 @@
+{% extends "inicio.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{%static 'css/bootstrap.min.css'%}">
+    <title>Qatar 2022</title>
+</head>
+<body>
+  {% block contenido %}
+    <main>     
+        <div class="album py-5 bg-light">
+          <div class="container">      
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-md-4 g-4">
+              <div class="col"> 
+                <div class="card shadow-sm">                  
+                  <svg class="bd-placeholder-img card-img-top" width="100%" height="84" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Argentina</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">ARGENTINA</text>
+                    <image href="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Flag_of_Argentina.svg/135px-Flag_of_Argentina.svg.png" />
+                  </svg>
+                  <image href="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Flag_of_Argentina.svg/135px-Flag_of_Argentina.svg.png" />
+                  <div class="card-body">                                     
+                    <p class="card-text">Dos veces campeón del mundo, dos sub-campeonatos </p>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div class="btn-group">
+                        {% for seleccion in equipos %}
+                          {% if seleccion.seleccion == 'Argentina'%}
+                            <a class="btn btn-primary" href="/DataMundial/seleccionElegida/{{seleccion.seleccion}}" style="color:#0b0b0b">Ver</a> 
+                          {% endif%}      
+                        {% endfor %}                                                                                      
+                      </div>                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col"> 
+                <div class="card shadow-sm">                  
+                  <svg class="bd-placeholder-img card-img-top" width="100%" height="84" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Mexico</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="60%" y="50%" fill="#eceeef" dy=".3em">  MEXICO</text>
+                    <image href="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Flag_of_Mexico.svg/150px-Flag_of_Mexico.svg.png" />
+                  </svg>
+                  <image href="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Flag_of_Mexico.svg/150px-Flag_of_Mexico.svg.png" />
+                  <div class="card-body">                                     
+                    <p class="card-text">Dos veces anfitrión del mundial, participo 17 veces</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div class="btn-group">
+                        {% for seleccion in equipos %}
+                          {% if seleccion.seleccion == 'Mexico'%}
+                            <a class="btn btn-primary" href="/DataMundial/seleccionElegida/{{seleccion.seleccion}}" style="color:#0b0b0b">Ver</a> 
+                          {% endif%}      
+                        {% endfor %}                  
+                      </div>                      
+                    </div>
+                  </div>
+                </div>
+              </div>                      
+              <!-- AGREGAR CODIGO SIGUIENTE PAIS-->
+              <div class="col"> 
+                <div class="card shadow-sm">                  
+                  <svg class="bd-placeholder-img card-img-top" width="100%" height="84" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>USA</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="70%" y="50%" fill="#eceeef" dy=".3em">  USA</text>
+                    <image href="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Flag_of_the_United_States.svg/160px-Flag_of_the_United_States.svg.png" />
+                  </svg>
+                  <image href="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Flag_of_the_United_States.svg/160px-Flag_of_the_United_States.svg.png" />
+                  <div class="card-body">                                     
+                    <p class="card-text">Su mejor actuacion fue en el mundial de 1930 (3° puesto)</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                      {% for seleccion in equipos %}
+                          {% if seleccion.seleccion == 'USA'%}
+                            <a class="btn btn-primary" href="/DataMundial/seleccionElegida/{{seleccion.seleccion}}" style="color:#0b0b0b">Ver</a> 
+                          {% endif%}      
+                        {% endfor %}                    
+                    </div>
+                  </div>
+                </div>
+              </div>                      
+              <!-- AGREGAR CODIGO SIGUIENTE PAIS-->
+              <div class="col"> 
+                <div class="card shadow-sm">                  
+                  <svg class="bd-placeholder-img card-img-top" width="100%" height="84" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Qatar</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="80%" y="50%" fill="#eceeef" dy=".3em">  Qatar</text>
+                    <image href="https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Flag_of_Qatar.svg/220px-Flag_of_Qatar.svg.png" />
+                  </svg>
+                  <image href="https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Flag_of_Qatar.svg/220px-Flag_of_Qatar.svg.png" />
+                  <div class="card-body">                                     
+                    <p class="card-text">Invirtió aproximadamente USD1.696 millones en la organización</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div class="btn-group">
+                        {% for seleccion in equipos %}
+                          {% if seleccion.seleccion == 'Qatar'%}
+                            <a class="btn btn-primary" href="/DataMundial/seleccionElegida/{{seleccion.seleccion}}" style="color:#0b0b0b">Ver</a> 
+                          {% endif%}      
+                        {% endfor %}                
+                      </div>                      
+                    </div>
+                  </div>
+                </div>
+              </div>                      
+              <!-- AGREGAR CODIGO SIGUIENTE PAIS-->
+              <div class="col"> 
+                <div class="card shadow-sm">                  
+                  <svg class="bd-placeholder-img card-img-top" width="100%" height="84" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Ecuador</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="70%" y="50%" fill="#eceeef" dy=".3em">  Ecuador</text>
+                    <image href="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Flag_of_Ecuador.svg/160px-Flag_of_Ecuador.svg.png" />
+                  </svg>
+                  <image href="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Flag_of_Ecuador.svg/160x-Flag_of_Ecuador.svg.png" />
+                  <div class="card-body">                                     
+                    <p class="card-text">Logro clasificarse en 4 ocasiones, nunca supero octavos de final</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div class="btn-group">
+                        {% for seleccion in equipos %}
+                          {% if seleccion.seleccion == 'Ecuador'%}
+                            <a class="btn btn-primary" href="/DataMundial/seleccionElegida/{{seleccion.seleccion}}" style="color:#0b0b0b">Ver</a> 
+                          {% endif%}      
+                        {% endfor %}                
+                      </div>                      
+                    </div>
+                  </div>
+                </div>
+              </div>                      
+              <!-- AGREGAR CODIGO SIGUIENTE PAIS-->
+              <div class="col"> 
+                <div class="card shadow-sm">                  
+                  <svg class="bd-placeholder-img card-img-top" width="100%" height="84" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Senegal</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="70%" y="50%" fill="#eceeef" dy=".3em">  Senegal</text>
+                    <image href="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Flag_of_Senegal.svg/160px-Flag_of_Senegal.svg.png" />
+                  </svg>
+                  <image href="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Flag_of_Senegal.svg/160px-Flag_of_Senegal.svg.png" />
+                  <div class="card-body">                                     
+                    <p class="card-text">Participó por primera vez en 2002 llegando hasta cuartos de final</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div class="btn-group">
+                        {% for seleccion in equipos %}
+                          {% if seleccion.seleccion == 'Senegal'%}
+                            <a class="btn btn-primary" href="/DataMundial/seleccionElegida/{{seleccion.seleccion}}" style="color:#0b0b0b">Ver</a> 
+                          {% endif%}      
+                        {% endfor %}                
+                      </div>                      
+                    </div>
+                  </div>
+                </div>
+              </div>                      
+              <!-- AGREGAR CODIGO SIGUIENTE PAIS-->
+              <div class="col"> 
+                <div class="card shadow-sm">                  
+                  <svg class="bd-placeholder-img card-img-top" width="100%" height="84" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Holanda</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="65%" y="50%" fill="#eceeef" dy=".3em">  Holanda</text>
+                    <image href="https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Flag_of_the_Netherlands.svg/140px-Flag_of_the_Netherlands.svg.png" />
+                  </svg>
+                  <image href="https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Flag_of_the_Netherlands.svg/140px-Flag_of_the_Netherlands.svg.png" />
+                  <div class="card-body">                                     
+                    <p class="card-text">Participó en diez ediciones, sub-campeones en tres oportunidades</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div class="btn-group">
+                        {% for seleccion in equipos %}
+                          {% if seleccion.seleccion == 'Holanda'%}
+                            <a class="btn btn-primary" href="/DataMundial/seleccionElegida/{{seleccion.seleccion}}" style="color:#0b0b0b">Ver</a> 
+                          {% endif%}      
+                        {% endfor %}                
+                      </div>                      
+                    </div>
+                  </div>
+                </div>
+              </div>                      
+              <!-- AGREGAR CODIGO SIGUIENTE PAIS-->
+              <div class="col"> 
+                <div class="card shadow-sm">                  
+                  <svg class="bd-placeholder-img card-img-top" width="100%" height="84" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Inglaterra</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="65%" y="50%" fill="#eceeef" dy=".3em">  Inglaterra</text>
+                    <image href="https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Flag_of_England.svg/160px-Flag_of_England.svg.png" />
+                  </svg>
+                  <image href="https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Flag_of_England.svg/160px-Flag_of_England.svg.png" />
+                  <div class="card-body">                                     
+                    <p class="card-text">Es la seleccion mas antigua de las existentes, campeones en 1966</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div class="btn-group">
+                        {% for seleccion in equipos %}
+                          {% if seleccion.seleccion == 'Inglaterra'%}
+                            <a class="btn btn-primary" href="/DataMundial/seleccionElegida/{{seleccion.seleccion}}" style="color:#0b0b0b">Ver</a> 
+                          {% endif%}      
+                        {% endfor %}                
+                      </div>                      
+                    </div>
+                  </div>
+                </div>
+              </div>                      
+              <!-- AGREGAR CODIGO SIGUIENTE PAIS-->
+              <div class="col"> 
+                <div class="card shadow-sm">                  
+                  <svg class="bd-placeholder-img card-img-top" width="100%" height="84" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Gales</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="65%" y="50%" fill="#eceeef" dy=".3em">  Gales</text>
+                    <image href="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Flag_of_Wales.svg/140px-Flag_of_Wales.svg.png" />
+                  </svg>
+                  <image href="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Flag_of_Wales.svg/140px-Flag_of_Wales.svg.png" />
+                  <div class="card-body">                                     
+                    <p class="card-text">Solo acudió al mundial de 1958, clasifico luego de 64 años</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div class="btn-group">
+                        {% for seleccion in equipos %}
+                          {% if seleccion.seleccion == 'Gales'%}
+                            <a class="btn btn-primary" href="/DataMundial/seleccionElegida/{{seleccion.seleccion}}" style="color:#0b0b0b">Ver</a> 
+                          {% endif%}      
+                        {% endfor %}                
+                      </div>                      
+                    </div>
+                  </div>
+                </div>
+              </div>                      
+              <!-- AGREGAR CODIGO SIGUIENTE PAIS-->
+              <div class="col"> 
+                <div class="card shadow-sm">                  
+                  <svg class="bd-placeholder-img card-img-top" width="100%" height="84" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Arabia Saudita</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="60%" y="50%" fill="#eceeef" dy=".3em">  Arabia Saudita</text>
+                    <image href="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Flag_of_Saudi_Arabia_%28type_2%29.svg/160px-Flag_of_Saudi_Arabia_%28type_2%29.svg.png" />
+                  </svg>
+                  <image href="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Flag_of_Saudi_Arabia_%28type_2%29.svg/160px-Flag_of_Saudi_Arabia_%28type_2%29.svg.png" />
+                  <div class="card-body">                                     
+                    <p class="card-text">Unico país arabe asiático en llegar a octavos de final, en 1994</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div class="btn-group">
+                        {% for seleccion in equipos %}
+                          {% if seleccion.seleccion == 'Arabia'%}
+                            <a class="btn btn-primary" href="/DataMundial/seleccionElegida/{{seleccion.seleccion}}" style="color:#0b0b0b">Ver</a> 
+                          {% endif%}      
+                        {% endfor %}                
+                      </div>                      
+                    </div>
+                  </div>
+                </div>
+              </div>                      
+              <!-- AGREGAR CODIGO SIGUIENTE PAIS-->
+              <div class="col"> 
+                <div class="card shadow-sm">                  
+                  <svg class="bd-placeholder-img card-img-top" width="100%" height="84" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Polonia</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="60%" y="50%" fill="#eceeef" dy=".3em">  Polonia</text>
+                    <image href="https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Flag_of_Poland.svg/160px-Flag_of_Poland.svg.png" />
+                  </svg>
+                  <image href="https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Flag_of_Poland.svg/160px-Flag_of_Poland.svg.png" />
+                  <div class="card-body">                                     
+                    <p class="card-text">Logro el tercer puesto en los mundiales de 1970 y 1980</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div class="btn-group">
+                        {% for seleccion in equipos %}
+                          {% if seleccion.seleccion == 'Polonia'%}
+                            <a class="btn btn-primary" href="/DataMundial/seleccionElegida/{{seleccion.seleccion}}" style="color:#0b0b0b">Ver</a> 
+                          {% endif%}      
+                        {% endfor %}                
+                      </div>                      
+                    </div>
+                  </div>
+                </div>
+              </div>                      
+              <!-- AGREGAR CODIGO SIGUIENTE PAIS-->
+              <div class="col"> 
+                <div class="card shadow-sm">                  
+                  <svg class="bd-placeholder-img card-img-top" width="100%" height="84" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Francia</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="60%" y="50%" fill="#eceeef" dy=".3em">  Francia</text>
+                    <image href="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Flag_of_France_%281794%E2%80%931815%2C_1830%E2%80%931974%2C_2020%E2%80%93present%29.svg/160px-Flag_of_France_%281794%E2%80%931815%2C_1830%E2%80%931974%2C_2020%E2%80%93present%29.svg.png" />
+                  </svg>
+                  <image href="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Flag_of_France_%281794%E2%80%931815%2C_1830%E2%80%931974%2C_2020%E2%80%93present%29.svg/160px-Flag_of_France_%281794%E2%80%931815%2C_1830%E2%80%931974%2C_2020%E2%80%93present%29.svg.png" />
+                  <div class="card-body">                                     
+                    <p class="card-text">Se les conoce como Les Bleus, son los actuales campeones</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div class="btn-group">
+                        {% for seleccion in equipos %}
+                          {% if seleccion.seleccion == 'Francia'%}
+                            <a class="btn btn-primary" href="/DataMundial/seleccionElegida/{{seleccion.seleccion}}" style="color:#0b0b0b">Ver</a> 
+                          {% endif%}      
+                        {% endfor %}                
+                      </div>                      
+                    </div>
+                  </div>
+                </div>
+              </div>                      
+              <!-- AGREGAR CODIGO SIGUIENTE PAIS-->              
+            </div>
+          </div>  
+          <div class="alert alert-primary" role="alert">
+            Pronto más selecciones para ver!!!
+          </div>               
+     </main>
+  {% endblock%}
+</body>
+</html>
